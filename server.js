@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 
 app.use(express.static(__dirname));
 
-mongoose.connect('mongodb://localhost:27017/student');
+mongoose.connect('mongodb://localhost:27017/michi');
 
 const connect = mongoose.connection;
 
