@@ -1,13 +1,13 @@
 var userModalElement;
 
-function makeModal() {
+function makeModal(title, button_value, callback) {
   let html = `
     <div class="modal" tabindex="-1" id="userModal">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form id="userform" onSubmit="JavaScript:insertData()">
+                <form id="userform" onSubmit="JavaScript:${callback}()">
                     <div class="modal-header">
-                        <h5 class="modal-title">Add User</h5>
+                        <h5 class="modal-title">${title}</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -32,7 +32,7 @@ function makeModal() {
                     <div class="modal-footer">
                         <input type="hidden" name="user_id" id="user_id" />
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn" style="color: white; background-color: blueviolet;">Add User</button>
+                        <button type="submit" class="btn" style="color: white; background-color: blueviolet;">${button_value}</button>
                     </div>
                 </form>
             </div>
