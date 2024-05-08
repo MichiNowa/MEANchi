@@ -20,7 +20,8 @@ connect.once('open', () => {
 });
 
 const userSchema = new mongoose.Schema({
-    name : String,
+    fname : String,
+    lname : String,
     email : String,
     age : Number
 });
@@ -33,7 +34,8 @@ app.get('/', async (request, response) => {
 
 app.post('/users', async (request, response) => {
     const user = new User({
-        name : request.body.name,
+        fname : request.body.fname,
+        lname : request.body.lname,
         email : request.body.email,
         age : request.body.age
     });
@@ -54,7 +56,8 @@ app.get('/users/:id', async (request, response) => {
 app.put('/users/:id', async (request, response) => {
     const userId = request.params.id;
     const user = await User.findById(userId);
-    user.name = request.body.name;
+    user.fname = request.body.fname;
+    user.lname = request.body.lname;
     user.email = request.body.email;
     user.age = request.body.age;
     const updatedItem = await user.save();

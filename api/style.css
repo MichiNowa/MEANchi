@@ -1,3 +1,5 @@
+
+
 body {
     background-image: url("smccnasipit_cover.jpg");
     background-repeat: no-repeat;
@@ -6,10 +8,10 @@ body {
     background-size: cover;
 }
 
-th {
+tr th {
     text-align: center;
 }
 
-td:nth-child(4),td:nth-child(3) {
+td{
     text-align: center;
 }
