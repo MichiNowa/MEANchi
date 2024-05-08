@@ -23,7 +23,7 @@ const userSchema = new mongoose.Schema({
     fname : String,
     lname : String,
     email : String,
-    age : Number
+    number : String
 });
 
 const User = mongoose.model('users', userSchema);
@@ -37,7 +37,7 @@ app.post('/users', async (request, response) => {
         fname : request.body.fname,
         lname : request.body.lname,
         email : request.body.email,
-        age : request.body.age
+        number : request.body.number
     });
     const newItem = await user.save();
     response.status(201).json({scuccess:true});
@@ -59,7 +59,7 @@ app.put('/users/:id', async (request, response) => {
     user.fname = request.body.fname;
     user.lname = request.body.lname;
     user.email = request.body.email;
-    user.age = request.body.age;
+    user.number = request.body.number;
     const updatedItem = await user.save();
     response.status(200).json(updatedItem);
 });
